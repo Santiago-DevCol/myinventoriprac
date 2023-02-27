@@ -4,6 +4,8 @@
             $link = new PDO("mysql:host=localhost;dbname=adminltemvc","root","");
 
             $link -> exec("set names utf8mb4");
+
+            return $link;
         }
     }
 ?>
