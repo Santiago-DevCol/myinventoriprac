@@ -16,13 +16,13 @@
                 <div class="col-12">
                     <div class="card card-info card-outline">
                         <div class="card-header"></div>
-                        <button type="button" class="btn btn-success crear-perfil" data-toggle="modal" data-target="#modal-crear-usuarios">
+                        <button type="button" class="btn btn-success crear-usuarios" data-toggle="modal" data-target="#modal-crear-usuarios">
                             Crear nuevo usuario
                         </button><br>
 
                     </div><br>
                     <div class="card-body">
-                        <table class="table table-bordered table-striped dt-responsive tablaperfil" width="100%">
+                        <table class="table table-bordered table-striped dt-responsive tablausuarios" width="100%">
                             <thead>
                                 <tr>
                                     <th style="width:10px">#</th>
@@ -35,6 +35,7 @@
                             </thead>
                             <tbody>
                                 <?php
+                                
                                     foreach ($usuarios as $key => $value) {
                                         
                                     
@@ -96,7 +97,7 @@ MODAL CREAR USUARIOS
             <form method="post" enctype="multipart/form-data">
 
             <div class="form-group has-feedback" bis_skin_checked="1">
-                <input type="text" class="form-control" name="nom_perfil" placeholder="nombre">
+                <input type="text" class="form-control" name="nom_usuarios" placeholder="nombre">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
 
@@ -112,10 +113,10 @@ MODAL CREAR USUARIOS
 
             <div class="form-group has-feedback" bis_skin_checked="1">
                 <div class="btn btn-default btn-file" bis_skin_checked="1">
-                    <i class="fas fa-papaerclip"></i>Adjuntar Imagen de perfil
-                    <input type="file" name="subirImgPerfil">
+                    <i class="fas fa-papaerclip"></i>Adjuntar Imagen de usuarios
+                    <input type="file" name="subirImgusuarios">
                 </div>
-                <img class="previsualizarImgPerfil img-fluid py-2" width="200" height="200">
+                <img class="previsualizarImgusuarios img-fluid py-2" width="200" height="200">
                 <p class="help-block small"> Dimensiones: 480px * 382px | Peso Max. 2MB | Formato JPG o PNG</p>
             </div>
 
@@ -123,7 +124,10 @@ MODAL CREAR USUARIOS
             <div class="form-group has-feedback">
 
                 <label>rol</label>
-
+                <select class="form-control" name="rol_user" required>
+                    <option value="1">ADMIN</option>
+                    <option value="2">VENDEDOR</option>
+                </select>
 
             </div>
 
@@ -133,8 +137,8 @@ MODAL CREAR USUARIOS
             </div>
 
             <?php 
-            /* $guardarPerfil = new ctrPerfiles();
-            $guardarPerfil->ctrGuardarPerfil();*/
+            $guardarusuarios = new ctrUsuarios();
+            $guardarusuarios->ctrGuardarusuarios();
             ?>
             </form>
         </div>

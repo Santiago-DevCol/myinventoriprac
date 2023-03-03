@@ -11,10 +11,14 @@ require_once "conexion.php";
 
             return $stmt -> fetchAll();
 
-            $stmt->close();
+            //$stmt->close();
 
             $stmt = null;
         }
+         static public function mdlguardarUsuarios(){
+            
+         }
+
     }
     
 ?>
